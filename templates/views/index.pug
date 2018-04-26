@@ -1,0 +1,39 @@
+extends ../layouts/default
+
+include ../mixins/post
+
+block content
+	div
+		img(src="./images/logoBanner.png", alt="",style="width: 100%;")
+
+
+	div(style="padding-left: 5vw; padding-right: 5vw;padding-top: 0.5vW;text-align: center;").jumbotron
+		h2 La Seguridad Social en Colombia
+		p como componente básico de la vida y del desarrollo de las actividades laborales e independientes de los ciudadanos, es considerado por la legislación nacional y por las sentencias de altas cortes como un derecho fundamental, siendo entonces necesario e importante que se aborden aspectos generales en materia de seguridad social en aras de brindar un sustento introductorio y general de las temáticas a desarrollar en el curso.	
+	.row
+		.col-sm-8
+			h3: a(href='/contenido/post/sistema-de-seguridad-social-en-salud') Sistema de Seguridad Social en Salud
+			//- p Simple example blog with posts and categories.
+			p La existencia de los tipos de regímenes es que se tiene la cobertura universal de la salud, comoquiera que en el grupo de los contribuyentes se encuentran aquellos cotizantes obligatorios de conformidad al artículo 26 y 29 del Decreto 806 de 1998 que los divide según el tipo al régimen al que pertenecen...
+			hr
+			h3: a(href='/contenido/post/sistema-de-seguridad-social-en-pensiones') Sistema de Seguridad Social en Pensiones
+			p En materia del Sistema de Seguridad Social en Pensiones, la Ley 100 de 1993 reconoce la existencia de dos tipos de regímenes aplicables en esta materia, estando de un lado el Régimen Solidario de Prima Media con Prestación Definida (RPM) ...
+			hr
+			h3: a(href='/contenido/post/sistema-de-seguridad-social-en-riesgos-laborales') Sistema de Seguridad Social en Riesgos Laborales
+			p En materia del Sistema de Riesgos Laborales, se debe indicar que este surge para la mitigación el riesgo laboral y/o profesional al que están expuestos los trabajadores y contratistas con el desarrollo de sus actividades, estando el nivel Vde riesgo definido previamente por parte del Decreto 1607..
+		.col-sm-4
+			.panel.panel-default
+				.panel-heading
+					h3.panel-title Control de Documento
+				.panel-body
+					img(src="./images/contenido/control.png", alt="",style="width: 100%;")
+				
+			.panel.panel-default
+				.panel-heading
+					h3.panel-title: a(href='/contact') Contáctenos
+				.panel-body
+					a(href='/contact'): img(src="./images/contactenos_dr.png", alt="",style="width: 100%;")
+	
+	div(style="margin-top: 60px; padding-left: 10vw; padding-right: 10vw;")
+		img(src="./images/contenido/cuadro.png", alt="",style="width: 100%;")
+

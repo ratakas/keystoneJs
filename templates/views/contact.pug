@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+block content
+	if enquirySubmitted
+		.jumbotron.text-center
+			h1 Success
+			p El mensaje ha sido enviado con exito!
+			<a class="btn btn-default" href="/">Volver al Inicio</a>
+	
+	else
+		.page-header
+			//-a(href='/keystone/enquiries').btn.btn-default.pull-right= user ? 'View Enquiries' : 'Sign in to View Enquiries'
+			h1 Contáctenos
+		.row
+			.col-sm-8
+				form(method='post').form-horizontal
+					input(type='hidden', name='action', value='contact')
+					.form-group(class=validationErrors.name ? 'has-error' : null)
+						label.col-sm-2.text-left.control-label Nombre
+						.col-sm-10
+							input(type='text' name='name.full' value=formData['name.full'] required placeholder="First Last").form-control
+					.form-group(class=validationErrors.email ? 'has-error' : null)
+						label.col-sm-2.control-label Email
+						.col-sm-10
+							input(type='email' name='email' value=formData.email required placeholder="name@domain.com").form-control
+					.form-group
+						label.col-sm-2.control-label Celular
+						.col-sm-10
+							input(type='text' name='phone' value=formData.phone placeholder='(optional)').form-control
+					.form-group(class=validationErrors.enquiryType ? 'has-error' : null required)
+						label.col-sm-2.control-label Tipo
+						.col-sm-10
+							select(name='enquiryType').form-control
+								option(value='') (required)
+								each type in enquiryTypes
+									option(value=type.value selected=formData.enquiryType === type.value)= type.label
+					.form-group(class=validationErrors.message ? 'has-error' : null)
+						label.col-sm-2.control-label Mensaje
+						.col-sm-10
+							textarea(name='message' placeholder='Escriba aquí su mensaje...' rows=4 required).form-control= formData.message
+					.form-group
+						.col-sm-10.col-sm-offset-2
+							//-p.help-block Note: others can see your enquiry in the <a href='/keystone/enquiries'>Admin UI</a>
+							button(type='submit').btn.btn-primary Enviar
+			.col-sm-4
+				.panel.panel-default
+					.panel-heading
+						h3.panel-title ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Líneas telefónicas
+					.panel-body Celular: 3222269898 <br>Lunes a viernes 8:00 a. m. a 04:00 p. m. Jornada Continua​.<br>
+						img(src="./images/contactobar.jpg", alt="",style="width: 100%;")
